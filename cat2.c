@@ -32,5 +32,6 @@ main(int argc, char* argv[])
 				fprintf(stderr, "cat: error opening %s\n", argv[i]);
 			}	
 		}
-	} 
+	}
+	exit(0);
 }
