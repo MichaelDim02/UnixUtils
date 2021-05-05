@@ -29,6 +29,7 @@ main(int argc, char* argv[])
 				fclose(f);
 			} else {
 				fprintf(stderr, "cat: %s\n", strerror(errno));
+				exit(-1);
 			}	
 		}
 	}
