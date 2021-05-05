@@ -1,11 +1,12 @@
 #include <stdlib.h>
 #include <stdio.h>
-//#include <unistd.h> <stdlib.h> <sys/types.h> <sys/stat.h>
+#include <errno.h>
+#include <string.h>
 #include <fcntl.h>
 
 /* Unix concatination utility */
 
-void
+static void
 cat(FILE *f)
 {
 	int c;
@@ -27,7 +28,7 @@ main(int argc, char* argv[])
 				cat(f);
 				fclose(f);
 			} else {
-				fprintf(stderr, "cat: error opening %s\n", argv[i]);
+				fprintf(stderr, "cat: %s\n", strerror(errno));
 			}	
 		}
 	}
